@@ -1,0 +1,5 @@
+import CurrencyImplicits
+import CurrencyImplicits._
+import nl.codebulb.core.CurencyImplicits._
+Euro(100)
+import nl.codebulb.core.Currency
