@@ -59,10 +59,10 @@ The following operations are supported
 ```scala
     def +(c2: Currency): Currency = performOperation(c1, c2, _ + _, converter)
     def -(c2: Currency): Currency = performOperation(c1, c2, _ - _, converter)
-    def *(c2: BigDecimal): Currency = Currency{c1.getCode()}(c1.amount * c2)
+    def *(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount * c2)
     def /(c2: Currency): Currency = performOperation(c1, c2, _ / _, converter)
-    def /(c2: BigDecimal): Currency = Currency{c1.getCode()}(c1.amount / c2)
-    def to(c2: Currency): Currency = Currency{c2.getCode()}(converter.convert(c1,c2).amount)
+    def /(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount / c2)
+    def to(c2: Currency): Currency = Currency(c2.getCode())(converter.convert(c1,c2).amount)
     def ===(c2: Currency): Boolean = compare(c1,c2, converter) == 0
     def !==(c2: Currency): Boolean = compare(c1,c2, converter) != 0
     def round(decimals: Int, roundingMode: RoundingMode): Currency = Currency(c1.getCode())(c1.amount.setScale(decimals, roundingMode))

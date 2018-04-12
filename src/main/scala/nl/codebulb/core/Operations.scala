@@ -38,7 +38,7 @@ trait Operations {
       * @param c2
       * @return
       */
-    def *(c2: BigDecimal): Currency = Currency{c1.getCode()}(c1.amount * c2)
+    def *(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount * c2)
 
     /**
       * Divide one currency by the other
@@ -52,14 +52,14 @@ trait Operations {
       * @param c2
       * @return
       */
-    def /(c2: BigDecimal): Currency = Currency{c1.getCode()}(c1.amount / c2)
+    def /(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount / c2)
 
     /**
       * Convert one currency to the other
       * @param c2
       * @return
       */
-    def to(c2: Currency): Currency = Currency{c2.getCode()}(converter.convert(c1,c2).amount)
+    def to(c2: Currency): Currency = Currency(c2.getCode())(converter.convert(c1,c2).amount)
 
     /**
       * Compare two currencies by first converting them to the same
@@ -116,7 +116,7 @@ trait Operations {
     */
   private def performOperation(c1: Currency, c2: Currency, operation: (BigDecimal, BigDecimal)=> BigDecimal, converter: Converter): Currency = {
     val convertedCurrency = converter.convert(c2, c1)
-    Currency{c1.getCode()}(operation(c1.amount, convertedCurrency.amount))
+    Currency(c1.getCode())(operation(c1.amount, convertedCurrency.amount))
   }
 
 }
