@@ -46,14 +46,14 @@ Dollar(10) / 2 // Dollar(5)
 
 Dollar(10) / Euro(2) // Dollar(4.03225...)
 ```
-
-As you can see its very easy to use and reason about. The first currency in the operation is the standard result currency. Using the ```to``` operation you can change this to the desired currency.
-Under the hood everything is a BigDecimal and conversions are available for ``int``, ``long``, ``BigDecimal`` and ``String``
-
 With the round method you can round to however you like by supplied the rounding mode.
 ```scala
 10.euro round(2, RoundingMode.HALF_EVEN) // Euro(10.00)
 ```
+
+As you can see its very easy to use and reason about. The first currency in the operation is the standard result currency. Using the ```to``` operation you can change this to the desired currency.
+Under the hood everything is a BigDecimal and conversions are available for ``int``, ``long``, ``BigDecimal`` and ``String``
+
 
 The following operations are supported
 ```scala
