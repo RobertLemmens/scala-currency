@@ -46,7 +46,7 @@ Dollar(10) / 2 // Dollar(5)
 
 Dollar(10) / Euro(2) // Dollar(4.03225...)
 ```
-With the round method you can round to however you like by supplied the rounding mode.
+With the round method you can round to however you like by supplying the rounding mode.
 ```scala
 10.euro round(2, RoundingMode.HALF_EVEN) // Euro(10.00)
 ```
