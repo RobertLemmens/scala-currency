@@ -1,4 +1,4 @@
-# A simple DSL for currencies
+# :yen: :pound: A simple DSL for currencies :dollar: :euro:
 This is an experimental library which aim is to create a DSL where currencies are 
 represented using case classes. Most currency libraries function around a common field that holds some currency 
 information. I want the result to be Euro(10) or Dollar(20) instead, and still do useful operations on them without too much boilerplate.
