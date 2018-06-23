@@ -41,13 +41,6 @@ trait Operations {
     def *(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount * c2)
 
     /**
-      * Divide one currency by the other
-      * @param c2
-      * @return
-      */
-    def /(c2: Currency): Currency = performOperation(c1, c2, _ / _, converter)
-
-    /**
       * Divide a currency by a number
       * @param c2
       * @return
