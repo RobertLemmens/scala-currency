@@ -59,7 +59,6 @@ The following operations are supported
     def +(c2: Currency): Currency = performOperation(c1, c2, _ + _, converter)
     def -(c2: Currency): Currency = performOperation(c1, c2, _ - _, converter)
     def *(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount * c2)
-    def /(c2: Currency): Currency = performOperation(c1, c2, _ / _, converter)
     def /(c2: BigDecimal): Currency = Currency(c1.getCode())(c1.amount / c2)
     def to(c2: Currency): Currency = Currency(c2.getCode())(converter.convert(c1,c2).amount)
     def ===(c2: Currency): Boolean = compare(c1,c2, converter) == 0
@@ -68,5 +67,8 @@ The following operations are supported
     def truncateToWhole: Currency = Currency(c1.getCode())(c1.amount.setScale(0, RoundingMode.FLOOR))
 ```
 Please see class Operations.scala for more details.
+## Testing
+run ``sbt test`` to run the tests. 
+
 ## Bugs and feedback
 The goal of this project is to keep the currencies as case classes so we can represent them as Euro(10) etc while being as functional as possible without too much boilerplate. Its all about the looks! If you have some good suggestions please let me know, im especially curious as to how to implement a somewhat generic Numeric[Currency] so lists behave as expected.
